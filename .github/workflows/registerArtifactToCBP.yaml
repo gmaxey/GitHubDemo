@@ -9,7 +9,7 @@ jobs:
       - name: Register build artifact
         uses: cloudbees-gha-cbp/register-build-artifact@v1
         with:
-          cloudbees-url: ${{ vars.CLOUDBEES_PLATFORM_URL }}
+          cloudbees-url: ${{ secrets.CLOUDBEES_PLATFORM_URL }}
           cloudbees-pat: ${{ secrets.CLOUDBEES_PLATFORM_PAT }}
           component-id: 6707d119-abf0-464c-b4e0-c107db76f167
           name: gmaxey/demo-app
