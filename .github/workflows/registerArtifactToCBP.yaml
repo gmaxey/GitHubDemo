@@ -1,0 +1,20 @@
+name: registerArtifactToCBP
+on:
+  - workflow_dispatch
+
+jobs:
+  publish-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Register build artifact
+        uses: cloudbees-gha-cbp/register-build-artifact@v1
+        with:
+          cloudbees-url: ${{ vars.CLOUDBEES_PLATFORM_URL }}
+          cloudbees-pat: ${{ secrets.CLOUDBEES_PLATFORM_PAT }}
+          component-id: 6707d119-abf0-464c-b4e0-c107db76f167
+          name: gmaxey/demo-app
+          version: 46d58094ff3e23ed50566bec88b9454edf43886e
+          url: https://hub.docker.com/repository/docker/gmaxey/demo-app/tags/46d58094ff3e23ed50566bec88b9454edf43886e/sha256-f9bbe9a64deb60d4effd632c134905ebe7c881e6b69ffc5f67434ab9f2ec903e
+          digest: sha256:f9bbe9a64deb60d4effd632c134905ebe7c881e6b69ffc5f67434ab9f2ec903e
+          
+      
